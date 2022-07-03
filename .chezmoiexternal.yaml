@@ -20,4 +20,8 @@
     url: "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.2.tar.gz"
     exact: false
     stripComponents: 1
-
+".tools":
+    type: "archive"
+    url: "https://nodejs.org/dist/v16.15.1/node-v16.15.1.tar.gz"
+    exact: false
+    stripComponents: 1
