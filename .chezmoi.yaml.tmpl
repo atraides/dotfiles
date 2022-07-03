@@ -1,0 +1,10 @@
+{{ $email := promptString "User's email address" "daniel@hagyarossy.hu" -}}
+{{ $name := promptString "User's real name" "Dániel Hagyárossy" -}}
+
+data:
+  email: {{ $email | quote }}
+  name: {{ $name | quote }}
+
+git:
+  autoCommit: true
+  autoPush: true
