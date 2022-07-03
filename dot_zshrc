@@ -14,7 +14,3 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.ansible.zsh ]] || source ~/.ansible.zsh
 source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-## Keyring settings
-export PYTHON_KEYRING_BACKEND=sagecipher.keyring.Keyring
-export KEYRING_PROPERTY_SSH_KEY_FINGERPRINT=ed:0c:c9:82:d1:c0:e3:11:96:fa:01:d3:22:b1:ba:1a
