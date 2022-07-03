@@ -1,10 +1,9 @@
 [".oh-my-zsh"]
     type = "archive"
     url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
-    exact = true
+    exact = false 
     stripComponents = 1
     refreshPeriod = "168h"
-    exlude = ["*/cache/**"]
 [".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
     type = "archive"
     url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
@@ -14,6 +13,5 @@
 [".oh-my-zsh/custom/themes/powerlevel10k"]
     type = "archive"
     url = "https://github.com/romkatv/powerlevel10k/archive/v1.16.1.tar.gz"
-    exact = true
+    exact = false
     stripComponents = 1
-    exlude = ["*.zwc"]
