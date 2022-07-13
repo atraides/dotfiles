@@ -9,3 +9,6 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+export PYTHON_KEYRING_BACKEND=sagecipher.keyring.Keyring
+export KEYRING_PROPERTY_SSH_KEY_FINGERPRINT=0e:72:0e:3f:57:87:26:e9:96:13:36:3d:29:b3:12:0f
