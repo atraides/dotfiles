@@ -1,4 +1,4 @@
-# vim: syntax=bash:language=zsh
+# vim: syntax=bash
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -13,9 +13,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-if [[ ! -f ~/.ansible.zsh ]]; then
+if [[ -f ~/.ansible.zsh ]]; then
     source ~/.ansible.zsh
-elif [[ ! -f ~/.enabled.plugins.zsh ]]; then
+elif [[ -f ~/.enabled.plugins.zsh ]]; then
     source ~/.enabled.plugins.zsh
 else
     plugins=(git grc pyenv)
