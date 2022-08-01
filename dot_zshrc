@@ -13,6 +13,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 if [[ ! -f ~/.ansible.zsh ]]; then
     source ~/.ansible.zsh
+elif [[ ! -f ~/.enabled.plugins.zsh ]]
+    source ~/.enabled.plugins.zsh
 else
     plugins=(git grc pyenv)
 fi
