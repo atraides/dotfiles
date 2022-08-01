@@ -28,7 +28,7 @@
     refreshPeriod: "168h"
 "bin/nvim":
     type: "archive"
-    url: "https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz"
+    url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
     exact: true
     stripComponents: 1
     refreshPeriod: "168h"
