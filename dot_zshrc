@@ -1,4 +1,4 @@
-# vi:noai:sw=3 ts=6:syntax=zsh
+/* vim: set syntax=zsh: */
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
