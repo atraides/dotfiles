@@ -35,3 +35,12 @@
     stripComponents: 1
     refreshPeriod: "168h"
 {{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+".tools/npm":
+    type: "archive"
+    url: "https://nodejs.org/dist/v16.16.0/node-v16.16.0-darwin-x64.tar.gz"
+    exact: true
+    stripComponents: 1
+    refreshPeriod: "168h"
+{{- end }}
+
