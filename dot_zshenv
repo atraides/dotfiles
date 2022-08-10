@@ -9,19 +9,19 @@ if [[ -d ${HOME}/bin ]]; then
 fi
 
 if [[ -d ${HOME}/bin/nvim/bin ]]; then
-    PATH="{$HOME}/bin/nvim/bin:${PATH}"
+    PATH="${HOME}/bin/nvim/bin:${PATH}"
 fi
 
 if [[ -d ${HOME}/.tools/npm/bin ]]; then
-    PATH="{$HOME}/.tools/npm/bin:${PATH}"
+    PATH="${HOME}/.tools/npm/bin:${PATH}"
 fi
 
 if [[ -d ${HOME}/.cargo/bin ]]; then
-    export PATH="${PATH}:${HOME}/.cargo/bin"
+    export PATH="${HOME}/.cargo/bin:${PATH}"
 fi
 
 if [[ -d ${HOME}/.local/bin ]]; then
-    PATH="{$HOME}/.local/bin:${PATH}"
+    PATH="${HOME}/.local/bin:${PATH}"
 fi
 
 if [[ -d /usr/local/bin ]]; then
