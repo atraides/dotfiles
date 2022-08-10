@@ -5,7 +5,21 @@
 # Add folders to PATH
 
 if [[ -d ${HOME}/bin ]]; then
-    export PATH="${HOME}/bin:${PATH}"
+    PATH="${HOME}/bin:${PATH}"
 fi
 
-# export PATH="${HOME}/bin/nvim/bin:${HOME}/.tools/npm/bin:${HOME}/bin:${HOME}/.local/bin:/usr/local/bin:/usr/local/
+if [[ -d ${HOME}/bin/nvim/bin ]]; then
+    PATH="{$HOME}/bin/nvim/bin:${PATH}"
+fi
+
+if [[ -d ${HOME}/.tools/npm/bin ]]; then
+    PATH="{$HOME}/.tools/npm/bin:${PATH}"
+fi
+
+if [[ -d ${HOME}/.local/bin ]]; then
+    PATH="{$HOME}/.local/bin:${PATH}"
+fi
+
+if [[ -d /usr/local/bin ]]; then
+    PATH="/usr/local/bin:${PATH}"
+fi
