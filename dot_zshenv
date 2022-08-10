@@ -1,1 +1,11 @@
+# vim: syntax=bash
+
 . "$HOME/.cargo/env"
+
+# Add folders to PATH
+
+if [[ -d ${HOME}/bin ]]; then
+    export PATH="${HOME}/bin:${PATH}"
+fi
+
+# export PATH="${HOME}/bin/nvim/bin:${HOME}/.tools/npm/bin:${HOME}/bin:${HOME}/.local/bin:/usr/local/bin:/usr/local/
