@@ -1,10 +1,13 @@
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
+if [[ -x gpgconf ]]; then
+    unset SSH_AGENT_PID
+    if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+        export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    fi
 
 export GPG_TTY=${TTY}
-gpg-connect-agent updatestartuptty /bye >/dev/null
+if [[ -x gpg-connect-agent ]]; then
+    gpg-connect-agent updatestartuptty /bye >/dev/null
+fi
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
