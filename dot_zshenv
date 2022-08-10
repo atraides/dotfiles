@@ -8,19 +8,23 @@ if [[ -d ${HOME}/bin ]]; then
     PATH="${HOME}/bin:${PATH}"
 fi
 
-if [[ -d ${HOME}/bin/nvim/bin ]]; then
-    PATH="${HOME}/bin/nvim/bin:${PATH}"
+if [[ -d ${HOME}/bin/nvim ]];then
+    if [[ -d ${HOME}/bin/nvim/bin ]]; then
+        PATH="${HOME}/bin/nvim/bin:${PATH}"
+    fi
 fi
 
-if [[ -d ${HOME}/.tools/npm/bin ]]; then
-    PATH="${HOME}/.tools/npm/bin:${PATH}"
+if [[ -d ${HOME}/.tools ]]; then
+    if [[ -d ${HOME}/.tools/npm -and -d ${HOME}/.tools/npm/bin ]]; then
+        PATH="${HOME}/.tools/npm/bin:${PATH}"
+    fi
 fi
 
-if [[ -d ${HOME}/.cargo/bin ]]; then
+if [[ -d ${HOME}/.cargo -and -d ${HOME}/.cargo/bin ]]; then
     export PATH="${HOME}/.cargo/bin:${PATH}"
 fi
 
-if [[ -d ${HOME}/.local/bin ]]; then
+if [[ -d ${HOME}/.local -and -d ${HOME}/.local/bin ]]; then
     PATH="${HOME}/.local/bin:${PATH}"
 fi
 
