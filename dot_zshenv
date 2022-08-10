@@ -1,6 +1,5 @@
 # vim: syntax=bash
 
-. "$HOME/.cargo/env"
 
 # Add folders to PATH
 
@@ -8,24 +7,17 @@ if [[ -d ${HOME}/bin ]]; then
     PATH="${HOME}/bin:${PATH}"
 fi
 
-if [[ -d ${HOME}/bin/nvim ]];then
-    if [[ -d ${HOME}/bin/nvim/bin ]]; then
-        PATH="${HOME}/bin/nvim/bin:${PATH}"
-    fi
+if [[ -d ${HOME}/bin/nvim/bin ]]; then
+    PATH="${HOME}/bin/nvim/bin:${PATH}"
 fi
 
-if [[ -d ${HOME}/.tools ]]; then
-    if [[ -d ${HOME}/.tools/npm ]]; then
-        if [[ -d ${HOME}/.tools/npm/bin ]]; then
-            PATH="${HOME}/.tools/npm/bin:${PATH}"
-        fi
-    fi
+if [[ -d ${HOME}/.tools/npm/bin ]]; then
+    PATH="${HOME}/.tools/npm/bin:${PATH}"
 fi
 
-if [[ -d ${HOME}/.cargo ]]; then
-    if [[ -d ${HOME}/.cargo/bin ]]; then
-        export PATH="${HOME}/.cargo/bin:${PATH}"
-    fi
+if [[ -d ${HOME}/.cargo/bin ]]; then
+    export PATH="${HOME}/.cargo/bin:${PATH}"
+    . "$HOME/.cargo/env"
 fi
 
 if [[ -d ${HOME}/.local ]]; then
