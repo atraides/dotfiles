@@ -1,3 +1,4 @@
+
 ".oh-my-zsh":
     type: "archive"
     url: "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
@@ -20,6 +21,7 @@
     url: "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.2.tar.gz"
     exact: false
     stripComponents: 1
+{{- if eq .chezmoi.os "linux" }}
 ".tools/npm":
     type: "archive"
     url: "https://nodejs.org/dist/v16.15.1/node-v16.15.1-linux-x64.tar.xz"
@@ -32,3 +34,4 @@
     exact: true
     stripComponents: 1
     refreshPeriod: "168h"
+{{- end }}
