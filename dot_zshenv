@@ -16,6 +16,10 @@ if [[ -d ${HOME}/.tools/npm/bin ]]; then
     PATH="{$HOME}/.tools/npm/bin:${PATH}"
 fi
 
+if [[ -d ${HOME}/.cargo/bin ]]; then
+    export PATH="${PATH}:${HOME}/.cargo/bin"
+fi
+
 if [[ -d ${HOME}/.local/bin ]]; then
     PATH="{$HOME}/.local/bin:${PATH}"
 fi
