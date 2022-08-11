@@ -19,7 +19,7 @@ if [[ -f ~/.ansible.zsh ]]; then
 elif [[ -f ~/.enabled.plugins.zsh ]]; then
     source ~/.enabled.plugins.zsh
 else
-    plugins=(git grc pyenv)
+    plugins=(git grc pyenv docker docker-compose colored-man-pages git-flow)
 fi
 
 source $ZSH/oh-my-zsh.sh
