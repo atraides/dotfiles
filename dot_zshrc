@@ -4,10 +4,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ -d ~/.cargo/bin ]]; then
-    export PATH="${PATH}:${HOME}/.cargo/bin"
-fi
-
 # Oh My Zsh settings
 DISABLE_AUTO_UPDATE="true"
 export ZSH=$HOME/.oh-my-zsh
