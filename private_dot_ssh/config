@@ -1,0 +1,20 @@
+Host smilprlc*.sharpnet.sdac
+  User hagyarod
+  SendEnv LANG LC_*
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+  ForwardAgent yes
+
+Host smilpd*.sharpnet.sdac
+  SendEnv LANG LC_*
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+  ForwardAgent yes
+
+Host *
+   UseKeychain yes
+   AddKeysToAgent yes
+   IdentityFile ~/.ssh/id_ed25519
+
