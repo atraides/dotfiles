@@ -5,7 +5,9 @@ bold_font        auto
 italic_font      auto
 bold_italic_font auto
 
-font_size 13.0
+{{ if eq .chezmoi.hostname "aeon" -}}font_size 15.0{{ end }}
+{{ if ne .chezmoi.hostname "aeon" -}}font_size 13.0{{ end }}
+
 symbol_map U+26D4,U+2714,U+274C,U+2705 SegoeUIEmoji
 
 {{ if eq .chezmoi.os "darwin" -}}shell /bin/zsh{{ end }}
