@@ -2,7 +2,6 @@
 Host *.roche.com
   User sxhagyad
   SendEnv LANG LC_*
-  IdentityFile ~/.ssh/roche_ed25519
   ForwardAgent yes
 
 {{ end -}}
@@ -11,7 +10,6 @@ Host *.roche.com
 Host smilprlc*.sharpnet.sdac
   User hagyarod
   SendEnv LANG LC_*
-  IdentityFile ~/.ssh/id_ed25519
   ForwardAgent yes
   {{ if eq .chezmoi.os "darwin" -}}
   UseKeychain yes
@@ -23,17 +21,14 @@ Host smilprlc*.sharpnet.sdac
 
 Host smilpd*.sharpnet.sdac
   SendEnv LANG LC_*
-  IdentityFile ~/.ssh/id_ed25519
   ForwardAgent yes
   {{ if eq .chezmoi.os "darwin" -}}
   UseKeychain yes
   AddKeysToAgent yes
 
 {{ end -}}
-
+{{ if eq .chezmoi.os "darwin" -}}
 Host *
-  IdentityFile ~/.ssh/id_ed25519
-  {{ if eq .chezmoi.os "darwin" -}}
   UseKeychain yes
   AddKeysToAgent yes
 {{ end -}}
