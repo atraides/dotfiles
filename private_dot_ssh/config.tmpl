@@ -1,4 +1,4 @@
-{{ if chezmoi.username eq "hagyarod" -}}
+{{ if .chezmoi.username eq "hagyarod" -}}
 Host *.roche.com
   User sxhagyad
   SendEnv LANG LC_*
@@ -6,7 +6,7 @@ Host *.roche.com
   ForwardAgent yes
 {{ end -}}
 
-{{ if chezmoi.username ne "hagyarod" -}}
+{{ if .chezmoi.username ne "hagyarod" -}}
 Host smilprlc*.sharpnet.sdac
   User hagyarod
   SendEnv LANG LC_*
