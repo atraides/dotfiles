@@ -1,20 +1,36 @@
+{{ if chezmoi.username eq "hagyarod" -}}
+Host *.roche.com
+  User sxhagyad
+  SendEnv LANG LC_*
+  IdentityFile ~/.ssh/roche_ed25519
+  ForwardAgent yes
+{{ end -}}
+
+{{ if chezmoi.username ne "hagyarod" -}}
 Host smilprlc*.sharpnet.sdac
   User hagyarod
   SendEnv LANG LC_*
+{{ if eq .chezmoi.os "darwin" -}}
   UseKeychain yes
   AddKeysToAgent yes
+{{ end -}}
   IdentityFile ~/.ssh/id_ed25519
   ForwardAgent yes
+{{ end -}}
 
 Host smilpd*.sharpnet.sdac
   SendEnv LANG LC_*
+{{ if eq .chezmoi.os "darwin" -}}
   UseKeychain yes
   AddKeysToAgent yes
+{{ end -}}
   IdentityFile ~/.ssh/id_ed25519
   ForwardAgent yes
 
 Host *
-   UseKeychain yes
-   AddKeysToAgent yes
+{{ if eq .chezmoi.os "darwin" -}}
+  UseKeychain yes
+  AddKeysToAgent yes
+{{ end -}}
    IdentityFile ~/.ssh/id_ed25519
 
