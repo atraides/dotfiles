@@ -16,6 +16,7 @@ Host smilprlc*.sharpnet.sdac
  {{- end -}}
 {{ end }}
 
+{{- if eq .chezmoi.username "atraides" -}}
 Host smilpd*.sharpnet.sdac
   ForwardAgent yes
   {{ if eq .chezmoi.os "darwin" -}}
@@ -23,6 +24,7 @@ Host smilpd*.sharpnet.sdac
   UseKeychain yes
   AddKeysToAgent yes
   {{- end }}
+{{ end }}
 
 {{- if eq .chezmoi.os "darwin" -}}
 Host *
