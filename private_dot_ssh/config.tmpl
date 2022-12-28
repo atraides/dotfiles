@@ -27,9 +27,12 @@ Host smilpd*.sharpnet.sdac
   AddKeysToAgent yes
 
 {{ end -}}
+
 {{ if eq .chezmoi.os "darwin" -}}
 Host *
   UseKeychain yes
   AddKeysToAgent yes
 {{ end -}}
 
+Host *.sharpnet.sdac
+  ForwardAgent yes
