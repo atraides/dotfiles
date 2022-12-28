@@ -1,11 +1,11 @@
-{{- if eq .chezmoi.username "hagyarod" -}}
+{{ if eq .chezmoi.username "hagyarod" -}}
 Host *.roche.com
   User sxhagyad
   SendEnv LANG LC_*
   ForwardAgent yes
-{{- end }}
+{{ end -}}
 
-{{- if ne .chezmoi.username "hagyarod" -}}
+{{ if ne .chezmoi.username "hagyarod" -}}
 Host smilprlc*.sharpnet.sdac
   User hagyarod
   ForwardAgent yes
@@ -14,9 +14,9 @@ Host smilprlc*.sharpnet.sdac
   UseKeychain yes
   AddKeysToAgent yes
  {{- end -}}
-{{ end }}
+{{ end -}}
 
-{{- if eq .chezmoi.username "atraides" -}}
+{{ if eq .chezmoi.username "atraides" -}}
 Host smilpd*.sharpnet.sdac
   ForwardAgent yes
   {{ if eq .chezmoi.os "darwin" -}}
