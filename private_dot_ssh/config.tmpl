@@ -15,19 +15,17 @@ Host smilprlc*.sharpnet.sdac
   AddKeysToAgent yes
   {{- end -}}
 {{- end }}
-
 Host smilpd*.sharpnet.sdac
   SendEnv LANG LC_*
   ForwardAgent yes
-  {{ if eq .chezmoi.os "darwin" }}
+  {{ if eq .chezmoi.os "darwin" -}}
   UseKeychain yes
   AddKeysToAgent yes
-  {{ end }}
-
+  {{- end }}
 Host *.sharpnet.sdac
   ForwardAgent yes
 
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" -}}
 Host *
   UseKeychain yes
   AddKeysToAgent yes
