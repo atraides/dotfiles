@@ -19,7 +19,7 @@ if [[ -x /usr/bin/grc && /etc/grc.zsh ]]; then
   plugins+=("grc");
 fi
 
-if [[ -x ${HOME}/.pyenv/pyenv ]]; then
+if [[ -x ${HOME}/.pyenv/bin/pyenv ]]; then
   plugins+=("pyenv");
 fi
 
