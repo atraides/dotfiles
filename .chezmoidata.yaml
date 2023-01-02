@@ -3,6 +3,6 @@ p10k_version: "v1.16.1"
 # renovate: datasource=github-tags depName=pyenv/pyenv
 pyenv_version: "v2.3.9"
 # renovate: datasource=github-tags depName=nodejs/node versioning=node
-nodejs_version: "v18.11.0"
+nodejs_version: "18.12.1"
 # renovate: datasource=github-tags depName=epk/SF-Mono-Nerd-Font
 sfmono_version: "v15.0d5e1"
