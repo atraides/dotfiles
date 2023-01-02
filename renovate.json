@@ -3,7 +3,7 @@
   "extends": ["config:base", ":dependencyDashboard"],
   "regexManagers": [
     {
-      "fileMatch": ["^.chezmoidata.yaml$"],
+      "fileMatch": ["^\\.chezmoidata\\.yaml$"],
       "matchStrings": [
         "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=(?<currentValue>.*)\\s"
       ],
