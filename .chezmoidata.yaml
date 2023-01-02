@@ -1,6 +1,6 @@
 p10k_version: "1.16.1"
 # renovate: datasource=github-releases depName=pyenv/pyenv
-pyenv_version: "2.3.9"
+pyenv_version: "2.3.8"
 # renovate: datasource=github-tags depName=nodejs/node versioning=node
 nodejs_version: "18.12.1"
 sfmono_version: "18.0d1e1.0"
