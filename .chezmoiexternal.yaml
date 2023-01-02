@@ -47,6 +47,11 @@
 "bin/nitch":
     type: "file"
     url: "https://github.com/unxsh/nitch/releases/download/{{ .nitch_version }}/nitchNerd"
+".tools/go":
+    type: "archive"
+    url: "https://go.dev/dl/go{{ .go_version }}.linux-amd64.tar.gz"
+    exact: false
+    stripComponents: 1
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}
