@@ -18,7 +18,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(history zsh-syntax-highlighting)
 
 ## Plugin configuration
-if [[ command -v git &>/dev/null ]]; then
+if command -v git &>/dev/null; then
   plugins+=("git");
 fi
 
