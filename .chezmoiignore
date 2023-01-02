@@ -1,5 +1,6 @@
 README.md
 */npm/lib/node_modules
+*/npm/bin
 {{ if ne .chezmoi.os "darwin" }}
 Library
 {{ end }}
