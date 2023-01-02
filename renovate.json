@@ -14,7 +14,7 @@
       "matchStrings": [
         "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version:\\s+\"(?<currentValue>.*\\d+\\.\\d+d\\d+e\\d+)\".*"
       ],
-      "versioningTemplate": "regex:.*(?<major>\\d+)(\\.\\d+d(?<minor>\\d+))?(e(?<patch>\\d+))?(-(?<compatibility>.*))?.*$"
+      "versioningTemplate": "regex:.*(?<major>\\d+)(\\.\\d+d(?<minor>\\d+))?(e(?<patch>\\d+))?(\\.(?<compatibility>.*))?$"
     }
   ]
 }
