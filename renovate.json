@@ -5,9 +5,16 @@
     {
       "fileMatch": ["^\\.chezmoidata\\.yaml$"],
       "matchStrings": [
-        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version:\\s+\"(?<currentValue>.+)\".*"
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version:\\s+\"(?<currentValue>v\\d+\\.\\d+\\.\\d+)\".*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    },
+    {
+      "fileMatch": ["^\\.chezmoidata\\.yaml$"],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version:\\s+\"(?<currentValue>.*\\d+\\.\\d+d\\d+e\\d+)\".*"
+      ],
+      "versioningTemplate": "regex:.*(?<major>\\d+)(\\.\\d+d(?<minor>\\d+))?(e(?<patch>\\d+))?(-(?<compatibility>.*))?$"
     }
   ]
 }
