@@ -15,8 +15,12 @@ if [[ -x /usr/bin/git ]]; then
   plugins+=("git");
 fi
 
-if [[ -f /usr/bin/grc && /etc/grc.zsh ]]; then
+if [[ -x /usr/bin/grc && /etc/grc.zsh ]]; then
   plugins+=("grc");
+fi
+
+if [[ -x ${HOME}/.pyenv/pyenv ]]; then
+  plugins+=("pyenv");
 fi
 
 source $ZSH/oh-my-zsh.sh <$TTY
