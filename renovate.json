@@ -3,9 +3,9 @@
   "extends": ["config:base", ":dependencyDashboard"],
   "regexManagers": [
     {
-      "fileMatch": [".*chezmoidata.*"],
+      "fileMatch": ["^\\.chezmoidata\\.yaml$"],
       "matchStrings": [
-        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=(?<currentValue>.*)\\s"
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version:(?<currentValue>.*)\\s"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
