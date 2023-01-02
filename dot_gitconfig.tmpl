@@ -1,10 +1,10 @@
 [user]
 	email = {{ .email | quote }}
 	name = {{ .name | quote }}
-#	signingkey = 9096277B79F8939C69CCB4A1F1D84FF7F22FFB22
+	signingkey = 9096277B79F8939C69CCB4A1F1D84FF7F22FFB22
 
 [init]
   defaultBranch = main
 
-#[commit]
-#	gpgsign = true
+[commit]
+	gpgsign = true
