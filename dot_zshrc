@@ -19,7 +19,7 @@ if [[ -f /usr/bin/grc && /etc/grc.zsh ]]; then
   plugins+=("grc");
 fi
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh <$TTY
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # export PYTHON_KEYRING_BACKEND=sagecipher.keyring.Keyring
