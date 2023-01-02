@@ -15,7 +15,7 @@ DISABLE_AUTO_UPDATE="true"
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=()
+plugins=(history, zsh-syntax-highlighting)
 
 if [[ -x /usr/bin/git ]]; then
   plugins+=("git");
