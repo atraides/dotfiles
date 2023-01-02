@@ -3,6 +3,6 @@ p10k_version: "v1.16.1"
 # renovate: datasource=github-tags depName=pyenv/pyenv
 pyenv_version: "v2.3.9"
 # renovate: datasource=github-tags depName=nodejs/node
-nodejs_version: "v18.12.0"
+nodejs_version: "v18.12.1"
 # renovate: datasource=github-tags depName=unxsh/nitch versioning=docker
 nitch_version: "0.1.6"
