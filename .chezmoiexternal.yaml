@@ -44,6 +44,9 @@
     type: "git-repo"
     url: "https://github.com/epk/SF-Mono-Nerd-Font.git"
     refreshPeriod: "168h"
+"bin/nitch":
+    type: "file"
+    url: "https://github.com/unxsh/nitch/releases/download/{{ .nitch_version }}/nitchNerd"
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}
