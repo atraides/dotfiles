@@ -20,6 +20,10 @@
     url: "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.9.tar.gz"
     exact: false
     stripComponents: 1
+".pyenv/plugins/pyenv-virtualenv":
+    type: "git-repo"
+    url: "https://github.com/pyenv/pyenv-virtualenv.git"
+    refreshPeriod: "168h"
 {{- if eq .chezmoi.os "linux" }}
 # ".tools/npm":
 #     type: "archive"
