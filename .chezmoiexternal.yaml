@@ -30,7 +30,7 @@
 {{ if eq .chezmoi.os "linux" }}
 ".tools/npm":
     type: "archive"
-    url: "https://nodejs.org/dist/v{{ .nodejs_version }}/node-v{{ .nodejs_version }}-linux-x64.tar.xz"
+    url: "https://nodejs.org/dist/{{ .nodejs_version }}/node-{{ .nodejs_version }}-linux-x64.tar.xz"
     exact: true
     stripComponents: 1
     refreshPeriod: "168h"
@@ -52,7 +52,7 @@
 {{ if eq .chezmoi.os "darwin" }}
 ".tools/npm":
     type: "archive"
-    url: "https://nodejs.org/dist/v{{ .nodejs_version }}/node-v{{ .nodejs_version }}-darwin-x64.tar.gz"
+    url: "https://nodejs.org/dist/{{ .nodejs_version }}/node-{{ .nodejs_version }}-darwin-x64.tar.gz"
     exact: true
     stripComponents: 1
     refreshPeriod: "168h"
