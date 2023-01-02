@@ -7,7 +7,7 @@
     {
       "fileMatch": ["^\\.chezmoidata\\.yaml$"],
       "matchStrings": [
-        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version:\\s+\"(?<currentValue>v\\d+\\.\\d+\\.\\d+)\".*"
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_version:\\s+\"(?<currentValue>v?\\d+\\.\\d+\\.\\d+)\".*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     },
