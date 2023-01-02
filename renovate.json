@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":dependencyDashboard"],
+  "timezone": "Europe/Budapest",
+  "schedule": ["before 5am"],
   "regexManagers": [
     {
       "fileMatch": ["^\\.chezmoidata\\.yaml$"],
