@@ -1,8 +1,8 @@
 # renovate: datasource=github-tags depName=romkatv/powerlevel10k
-p10k_version: "1.16.1"
+p10k_version: "v1.16.1"
 # renovate: datasource=github-tags depName=pyenv/pyenv
-pyenv_version: "2.3.8"
+pyenv_version: "v2.3.8"
 # renovate: datasource=github-tags depName=nodejs/node versioning=node
-nodejs_version: "18.12.1"
+nodejs_version: "v18.12.1"
 # renovate: datasource=github-tags depName=epk/SF-Mono-Nerd-Font
-sfmono_version: "18.0d1e1.0"
+sfmono_version: "v18.0d1e1.0"
