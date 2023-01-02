@@ -41,10 +41,9 @@
     stripComponents: 1
     refreshPeriod: "168h"
 ".fonts/SF_Mono":
-    type: "archive"
-    url: "https://github.com/epk/SF-Mono-Nerd-Font/archive/refs/tags/{{ .sfmono_version }}.tar.gz"
-    exact: false
-    stripComponents: 1
+    type: "git-repo"
+    url: "https://github.com/epk/SF-Mono-Nerd-Font.git"
+    refreshPeriod: "168h"
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}

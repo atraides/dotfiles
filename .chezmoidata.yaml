@@ -4,5 +4,3 @@ p10k_version: "v1.16.1"
 pyenv_version: "v2.3.9"
 # renovate: datasource=github-tags depName=nodejs/node versioning=node
 nodejs_version: "18.12.1"
-# renovate: datasource=github-tags depName=epk/SF-Mono-Nerd-Font
-sfmono_version: "v18.0d1e1.0"
