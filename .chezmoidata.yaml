@@ -6,5 +6,5 @@ pyenv_version: "v2.3.9"
 nodejs_version: "v19.3.0"
 # renovate: datasource=github-tags depName=unxsh/nitch versioning=docker
 nitch_version: "0.1.6"
-# renovate: datasource=golang-version depName=go
+# renovate: datasource=github-tags depName=golang/go versioning=go
 go_version: "1.19.4"
