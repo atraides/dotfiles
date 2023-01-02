@@ -7,3 +7,4 @@ Library
 {{ if ne .chezmoi.os "linux" }}
 .fonts/*/.uuid
 {{ end }}
+renovate.json
