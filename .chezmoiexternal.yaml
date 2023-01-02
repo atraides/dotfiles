@@ -1,0 +1,65 @@
+".oh-my-zsh":
+    type: "archive"
+    url: "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+    exact: false
+    stripComponents: 1
+    refreshPeriod: "168h"
+".oh-my-zsh/custom/plugins/zsh-syntax-highlighting":
+    type: "archive"
+    url: "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
+    exact: true
+    stripComponents: 1
+    refreshPeriod: "168h"
+".oh-my-zsh/custom/themes/powerlevel10k":
+    type: "archive"
+    url: "https://github.com/romkatv/powerlevel10k/archive/v{{ .p10k-version }}tar.gz"
+    exact: false
+    stripComponents: 1
+
+{{ if (or (eq .chezmoi.hostname "aiyura" ) (.chezmoi.hostname | contains "dev")) }}
+".pyenv":
+    type: "archive"
+    url: "https://github.com/pyenv/pyenv/archive/refs/tags/v{{ .pyenv-version }}.tar.gz"
+    exact: false
+    stripComponents: 1
+".pyenv/plugins/pyenv-virtualenv":
+    type: "git-repo"
+    url: "https://github.com/pyenv/pyenv-virtualenv.git"
+    refreshPeriod: "168h"
+
+{{ if eq .chezmoi.os "linux" }}
+".tools/npm":
+    type: "archive"
+    url: "https://nodejs.org/dist/v{{ .nodejs-version }}/node-v{{ .nodejs-version }}-linux-x64.tar.xz"
+    exact: true
+    stripComponents: 1
+    refreshPeriod: "168h"
+"bin/nvim":
+    type: "archive"
+    url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
+    exact: true
+    stripComponents: 1
+    refreshPeriod: "168h"
+".fonts/SF_Mono":
+    type: "archive"
+    url: "https://github.com/epk/SF-Mono-Nerd-Font/archive/refs/tags/v{{ .sfmono-version }}.tar.gz"
+    exact: false
+    stripComponents: 1
+{{ end }}
+
+{{ if eq .chezmoi.os "darwin" }}
+".tools/npm":
+    type: "archive"
+    url: "https://nodejs.org/dist/v{{ .nodejs-version }}/node-v{{ .nodejs-version }}-darwin-x64.tar.gz"
+    exact: true
+    stripComponents: 1
+    refreshPeriod: "168h"
+"bin/nvim":
+    type: "archive"
+    url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz"
+    exact: true
+    stripComponents: 1
+    refreshPeriod: "168h"
+{{ end }}
+
+{{ end }}
