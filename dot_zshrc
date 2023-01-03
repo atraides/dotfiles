@@ -18,14 +18,7 @@ if command -v git &>/dev/null; then
   plugins+=("git");
 fi
 
-if [[ $(command -v grc &>/dev/null) ]]; then
-	echo "fa"
-fi
-if [[ -f /etc/grc.zsh ]]; then
-	echo "fu"
-fi
-
-if [[ $(command -v grc &>/dev/null) && -f /etc/grc.zsh ]]; then
+if [[ -x /usr/bin/grc && -f /etc/grc.zsh ]]; then
   plugins+=("grc");
 fi
 
