@@ -1,9 +1,10 @@
 # vim: syntax=bash
 # This file is executed when a login shell is called
 
-{{ if ne .chezmoi.os "darwin" -}}eval $(keychain --eval -Q -q){{ end }}
 # export PYTHON_KEYRING_BACKEND="sagecipher.keyring.Keyring"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+if command -v pyenv 2>/dev/null; then
+  eval "$(pyenv init --path)"
+fi
