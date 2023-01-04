@@ -1,18 +1,40 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+## Autokill
+killall -9 ksuperkey xfce4-power-manager &
+killall sxhkd; sxhkd &
+killall dunst; dunst &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+## Fix Cursor
+xsetroot -cursor_name left_ptr &
 
-bspc config border_width         2
-bspc config window_gap          12
+# Variable
 
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+alias bc='bspc config'
+alias br='bspc rule'
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+# Workspaces
+
+bspc monitor -d I II III IV V VI
+
+# Config
+
+bc border_width 0
+bc window_gap 10
+bc split_ratio 0.50
+bc bottom_padding 0
+
+bc borderless_monocle true
+bc gapless_monocle false
+bc focus_follows_pointer true
+bc paddingless_monocle true
+bc single_monocle false
+
+# Rules
+
+br -a feh state=floating
+br -a sxiv state=floating
+br -a mpv state=floating
+br -a Conky state=floating
+br -a stalonetray state=floating
+br -a Lxappearance state=floating
