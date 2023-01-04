@@ -12,6 +12,11 @@ feh --bg-fill -r -z $HOME/wallpapers/ &
 ## Fix Cursor
 xsetroot -cursor_name left_ptr &
 
+## Bar
+$HOME/.config/polybar/launch.sh &
+
+
+
 # Variable
 
 alias bc='bspc config'
