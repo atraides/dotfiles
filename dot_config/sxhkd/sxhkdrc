@@ -1,121 +1,183 @@
-#
-# wm independent hotkeys
-#
+# Keybinds
 
-# terminal emulator
+# Main
+
+# Terminal (kitty)
 super + Return
-	gnome-terminal
+	alacritty
 
-# program launcher
-super + @space
-	dmenu_run
+# Rofi App Launcher
+alt + F1
+	sh $HOME/.config/rofi/bin/launcher
 
-# make sxhkd reload its configuration files:
+# Rofi Network Menu
+super + n
+	networkmanager_dmenu
+
+# Rofi Menus/Applets
+super + {r,m,p,a,s,i}
+	sh $HOME/.config/rofi/bin/{runner,music,powermenu,asroot,screenshot,network}
+super + b
+        rofi-bluetooth
+
+# Dashboard (Unused)
+super + d
+	sh $HOME/.local/bin/dashboard
+
+# Applications
+
+# Launch Apps
+super + shift + {b,n}
+	{firefox,geany}
+super + e
+	thunar
+
+# Terminal Apps
+ctrl + alt + {v,n,r,h}
+	alacritty -e {vim,nvim,ranger,htop}
+
+# Lockscreen
+ctrl + alt + l
+        sh $HOME/.local/bin/lock
+
+# System Keys
+
+# Show GUI screenshot
+super + shift + s
+        sh $HOME/.config/rofi/bin/screenshot
+
+# Take a screenshot
+Print
+	sh $HOME/.local/bin/takeshot --now
+	
+# Take screenshot in 5 second
+alt + Print	
+	sh $HOME/.local/bin/takeshot --in5
+
+# Take screenshot in 10 second
+shift + Print	
+	sh $HOME/.local/bin/takeshot --in10
+
+# Take screenshot of active window
+ctrl + Print
+	sh $HOME/.local/bin/takeshot --win
+
+# Take screenshot of area
+ctrl + alt + Print
+	sh $HOME/.local/bin/takeshot --area
+
+# Brighness control
+XF86MonBrightness{Up,Down}
+	brightness{ --inc, --dec}
+	
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume}
+	sh $HOME/.local/bin/volume{ up, down}
+
+XF86AudioMute
+	sh $HOME/.local/bin/volume mute
+	
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+# Window Manager
+
+# Close App
+super + {_,shift + }x
+	bspc node -{c,k}
+
+# Reload Keybindings
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
-# bspwm hotkeys
-#
+# kill window
+ctrl + alt + Escape
+       xkill
 
-# quit/restart bspwm
-super + alt + {q,r}
+# Quit/Restart bspwm
+ctrl + shift + {q,r}
 	bspc {quit,wm -r}
+	
+# Split horizontal, vertical or cancel
+super + {h,v,q}
+	bspc node -p {east,south,cancel}
 
-# close and kill
-super + {_,shift + }w
-	bspc node -{c,k}
+# Fullscreen or Monocle
+super + f
+    bspc node -t "~"fullscreen
 
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
+# Toggle beetwen floating & tiled
+super + space
+    bspc node -t "~"{floating,tiled}
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
+# Pseudo Tiled & tiled mode
+super + alt + {p,t}
+    bspc node -t "~"{pseudo_tiled,tiled}
 
-# swap the current node and the biggest window
-super + g
-	bspc node -s biggest.window
-
-#
-# state/flags
-#
-
-# set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-# set the node flags
+# Set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
-# focus/swap
-#
-
-# focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
 
-# focus the next/previous window in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
+# Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
 
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
-
-# focus the last node/desktop
-super + {grave,Tab}
+# Switch to last opened workspace
+super + {Tab,grave}
 	bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+# Send focused window to another workspace
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'
 
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+# Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+# Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+# Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {20 0,0 20,0 -20,-20 0}
 
-#
-# preselect
-#
+# Hide/Unhide Window
+super + shift + i
+	winmask		
 
-# preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+# Preselect the direction
+super + ctrl + alt +{Left,Right,Up,Down}
+	bspc node -p {west,east,north,south}
 
-# preselect the ratio
+# Preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
+# Cancel the preselection for the focused node
 super + ctrl + space
 	bspc node -p cancel
 
-# cancel the preselection for the focused desktop
+# Cancel the preselection for the focused desktop
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+	
+	
+	
+# Close App
+super + {_,shift + }c
+	bspc node -{c,k}
 
-#
-# move/resize
-#
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd
 
-# expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
-# move a floating window
-super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
