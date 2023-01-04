@@ -5,6 +5,10 @@ killall -9 ksuperkey xfce4-power-manager &
 killall sxhkd; sxhkd &
 killall dunst; dunst &
 
+## Background
+#feh --bg-fill -r -z $HOME/Pictures/Wallpapers/1.jpg &
+feh --bg-fill -r -z $HOME/wallpapers/ &
+
 ## Fix Cursor
 xsetroot -cursor_name left_ptr &
 
