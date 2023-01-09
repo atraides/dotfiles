@@ -28,22 +28,22 @@
     refreshPeriod: "168h"
 
 {{ if eq .chezmoi.os "linux" }}
-".tools/npm":
-    type: "archive"
-    url: "https://nodejs.org/dist/{{ .nodejs_version }}/node-{{ .nodejs_version }}-linux-x64.tar.xz"
-    exact: true
-    stripComponents: 1
-    refreshPeriod: "168h"
-"bin/nvim":
-    type: "archive"
-    url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
-    exact: true
-    stripComponents: 1
-    refreshPeriod: "168h"
-".fonts/SF_Mono":
-    type: "git-repo"
-    url: "https://github.com/epk/SF-Mono-Nerd-Font"
-    refreshPeriod: "168h"
+# ".tools/npm":
+#     type: "archive"
+#     url: "https://nodejs.org/dist/{{ .nodejs_version }}/node-{{ .nodejs_version }}-linux-x64.tar.xz"
+#     exact: true
+#     stripComponents: 1
+#     refreshPeriod: "168h"
+# "bin/nvim":
+#     type: "archive"
+#     url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
+#     exact: true
+#     stripComponents: 1
+#     refreshPeriod: "168h"
+# ".fonts/SF_Mono":
+#     type: "git-repo"
+#     url: "https://github.com/epk/SF-Mono-Nerd-Font"
+#     refreshPeriod: "168h"
 "bin/nitch":
     type: "file"
     url: "https://github.com/unxsh/nitch/releases/download/{{ .nitch_version }}/nitchNerd"
