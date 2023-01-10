@@ -1,8 +1,8 @@
 # ~/.gitconfig
 
-[includeIf "gitdir:~/develop/roche/"]
+[includeIf "hasconfig:remote.*.url:git@ssh.code.roche.com:*/**"]
     path = .gitconfig-roche
-[includeIf "gitdir:!~/develop/roche"]
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
     path = .gitconfig-personal
 
 [user]
