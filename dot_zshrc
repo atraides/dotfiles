@@ -22,7 +22,7 @@ if [[ -x /usr/bin/grc && -f /etc/grc.zsh ]]; then
   plugins+=("grc");
 fi
 
-if [[ -x ${HOME}/bin/poetry ]]; then
+if [[ -x ${HOME}/.local/bin/poetry ]]; then
   plugins+=("poetry");
 fi
 
