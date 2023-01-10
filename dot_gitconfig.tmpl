@@ -1,5 +1,11 @@
+# ~/.gitconfig
+
+[includeIf "gitdir:~/develop/roche/"]
+    path = .gitconfig-roche
+[includeIf "gitdir:!~/develop/roche"]
+    path = .gitconfig-personal
+
 [user]
-	email = {{ .email | quote }}
 	name = {{ .name | quote }}
 	signingkey = AE47445763C2B713
 
