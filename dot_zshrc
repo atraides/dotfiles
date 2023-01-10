@@ -22,6 +22,11 @@ if [[ -x /usr/bin/grc && -f /etc/grc.zsh ]]; then
   plugins+=("grc");
 fi
 
+if [[ -x ${HOME}/bin/poetry ]]; then
+  plugins+=("poetry");
+fi
+
+
 if [[ -d ${HOME}/.pyenv ]]; then
   export PYENV_ROOT="${HOME}/.pyenv"
   export PATH="${PYENV_ROOT}/bin:$PATH"
