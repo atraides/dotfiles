@@ -4,7 +4,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# PyEnv
+# gitignore.io
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/\$@ ;}
 
 # Oh My Zsh settings
 DISABLE_AUTO_UPDATE="true"
