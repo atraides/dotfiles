@@ -57,12 +57,12 @@ symbol = " "
 format = "[$symbol$branch]($style) "
 # truncation_length = 4
 truncation_symbol = "…/"
-style = "bold #905AFF"
+style = "bold #4d469b"
 
 # Shows current git status
 [git_status]
 format = '[\($all_status$ahead_behind\)]($style) '
-style = "bold #905AFF"
+style = "bold #4d469b"
 conflicted = "🏳"
 up_to_date = " "
 untracked = ""
@@ -97,7 +97,7 @@ disabled = true
 
 [python]
 symbol = " "
-style = "bold #685AFF"
+style = "bold #3F397F"
 pyenv_version_name = true
 pyenv_prefix = ""
 version_format = "v${major}.${minor}"
