@@ -31,14 +31,14 @@ disabled = false
 [env_var.STARSHIP_DEVICE]
 format = 'on [$env_value](bold yellow)'
 variable = "STARSHIP_DEVICE"
-disabled = false
+disabled = true
 
 # ---
 
 # Shows the hostname
 [hostname]
 ssh_only = true
-format = "[$hostname](bold #B054FF) "
+format = "on [$ssh_symbol$hostname](bold #B054FF) "
 disabled = false
 
 # Shows current directory
