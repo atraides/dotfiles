@@ -38,7 +38,7 @@ disabled = false
 # Shows the hostname
 [hostname]
 ssh_only = false
-format = "[$hostname](bold purple) "
+format = "[$hostname](bold #B1A3CC) "
 disabled = false
 
 # Shows current directory
@@ -48,7 +48,7 @@ truncation_symbol = "…/"
 home_symbol = " ~"
 read_only_style = "197"
 read_only = "  "
-style = "bold #5AC8FF"
+style = "bold #9989BE"
 format = "at [$path]($style)[$read_only]($read_only_style) "
 
 # Shows current git branch
@@ -57,12 +57,12 @@ symbol = " "
 format = "[$symbol$branch]($style) "
 # truncation_length = 4
 truncation_symbol = "…/"
-style = "bold #4d469b"
+style = "bold #8F7BB7"
 
 # Shows current git status
 [git_status]
 format = '[\($all_status$ahead_behind\)]($style) '
-style = "bold #4d469b"
+style = "bold #8F7BB7"
 conflicted = "🏳"
 up_to_date = " "
 untracked = ""
@@ -77,7 +77,7 @@ deleted = " "
 
 # Shows kubernetes context and namespace
 [kubernetes]
-format = 'via [ﴱ $context\($namespace\)](bold #5EA2FF) '
+format = 'via [ﴱ $context\($namespace\)](bold #7F68AC) '
 disabled = false
 
 # ---
@@ -97,7 +97,7 @@ disabled = true
 
 [python]
 symbol = " "
-style = "bold #3F397F"
+style = "bold #6F579E"
 pyenv_version_name = true
 pyenv_prefix = ""
 version_format = "v${major}.${minor}"
