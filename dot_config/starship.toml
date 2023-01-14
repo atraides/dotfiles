@@ -99,6 +99,7 @@ disabled = true
 symbol = " "
 style = "bold blue"
 pyenv_version_name = true
+pyenv_prefix = ""
 version_format = "v${major}.${minor}"
 # disabled = true
 
