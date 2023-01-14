@@ -46,10 +46,9 @@ disabled = false
 truncation_length = 1
 truncation_symbol = "…/"
 home_symbol = " ~"
-read_only_style = "197"
+read_only_style = "bold #8D56FE"
 read_only = "  "
 style = "bold #CDB6FE"
-read_only_style = "bold #8D56FE"
 format = "at [$path]($style)[$read_only]($read_only_style) "
 
 # Shows current git branch
