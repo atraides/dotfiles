@@ -5,8 +5,8 @@ command_timeout = 1000  # Change command timeout from 500 to 1000 ms
 
 # Change the default prompt format
 format = """\
-[╭╴](#121212)$env_var\
-$all[╰─](#121212)$character"""
+[╭╴](#666666)$env_var\
+$all[╰─](#666666)$character"""
 
 # Drop ugly default prompt characters
 [character]
@@ -97,7 +97,6 @@ disabled = true
 
 [python]
 symbol = " "
-style = "bold blue"
 pyenv_version_name = true
 pyenv_prefix = ""
 version_format = "v${major}.${minor}"
