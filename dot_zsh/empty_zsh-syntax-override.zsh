@@ -1,5 +1,5 @@
 # Declare the variable
 typeset -A ZSH_HIGHLIGHT_STYLES
 
-ZSH_HIGHLIGHT_STYLES[command]="fg=#CDB6FE,bold"
-ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=#A52AFF"
+ZSH_HIGHLIGHT_STYLES[command]="fg=10,bold"
+ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=9,bold"
