@@ -38,7 +38,7 @@ disabled = false
 # Shows the hostname
 [hostname]
 ssh_only = false
-format = "[$hostname](bold yellow) "
+format = "[$hostname](bold purple) "
 disabled = false
 
 # Shows current directory
@@ -56,12 +56,12 @@ symbol = " "
 format = "[$symbol$branch]($style) "
 # truncation_length = 4
 truncation_symbol = "…/"
-style = "bold green"
+style = "green"
 
 # Shows current git status
 [git_status]
 format = '[\($all_status$ahead_behind\)]($style) '
-style = "bold green"
+style = "green"
 conflicted = "🏳"
 up_to_date = " "
 untracked = ""
@@ -96,6 +96,9 @@ disabled = true
 
 [python]
 symbol = " "
+style = "yellow"
+pyenv_version_name = true
+version_format = "v${major}.${minor}"
 # disabled = true
 
 [nodejs]
