@@ -97,7 +97,7 @@ disabled = true
 
 [python]
 symbol = " "
-style = "bold #6F579E"
+style = "bold #5A0AFF"
 pyenv_version_name = true
 pyenv_prefix = ""
 version_format = "v${major}.${minor}"
