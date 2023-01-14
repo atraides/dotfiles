@@ -48,7 +48,8 @@ truncation_symbol = "…/"
 home_symbol = " ~"
 read_only_style = "197"
 read_only = "  "
-style = "bold #DACAFC"
+style = "bold #CDB6FE"
+read_only_style = "bold #8D56FE"
 format = "at [$path]($style)[$read_only]($read_only_style) "
 
 # Shows current git branch
@@ -111,3 +112,7 @@ disabled = true
 
 [terraform]
 disabled = true
+
+[cmd_duration]
+min_time = 25000
+style = "bold #FFE648"
