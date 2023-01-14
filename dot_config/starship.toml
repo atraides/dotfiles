@@ -63,8 +63,8 @@ style = "bold green"
 format = '[\($all_status$ahead_behind\)]($style) '
 style = "bold green"
 conflicted = "🏳"
-up_to_date = " "
-untracked = " "
+up_to_date = ""
+untracked = ""
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
@@ -95,7 +95,8 @@ disabled = true
 disabled = true
 
 [python]
-disabled = true
+symbol = " "
+# disabled = true
 
 [nodejs]
 disabled = true
