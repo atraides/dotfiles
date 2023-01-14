@@ -48,6 +48,7 @@ truncation_symbol = "…/"
 home_symbol = " ~"
 read_only_style = "197"
 read_only = "  "
+style = "cyan"
 format = "at [$path]($style)[$read_only]($read_only_style) "
 
 # Shows current git branch
@@ -56,12 +57,12 @@ symbol = " "
 format = "[$symbol$branch]($style) "
 # truncation_length = 4
 truncation_symbol = "…/"
-style = "green"
+style = "bold green"
 
 # Shows current git status
 [git_status]
 format = '[\($all_status$ahead_behind\)]($style) '
-style = "green"
+style = "bold green"
 conflicted = "🏳"
 up_to_date = " "
 untracked = ""
@@ -96,7 +97,7 @@ disabled = true
 
 [python]
 symbol = " "
-style = "yellow"
+style = "bold blue"
 pyenv_version_name = true
 version_format = "v${major}.${minor}"
 # disabled = true
