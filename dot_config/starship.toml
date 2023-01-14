@@ -38,7 +38,7 @@ disabled = false
 # Shows the hostname
 [hostname]
 ssh_only = false
-format = "[$hostname](bold #655091) "
+format = "[$hostname](bold #B054FF) "
 disabled = false
 
 # Shows current directory
@@ -48,7 +48,7 @@ truncation_symbol = "…/"
 home_symbol = " ~"
 read_only_style = "197"
 read_only = "  "
-style = "bold #A873B9"
+style = "bold #AE88FD"
 format = "at [$path]($style)[$read_only]($read_only_style) "
 
 # Shows current git branch
