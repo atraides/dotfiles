@@ -37,7 +37,7 @@ disabled = false
 
 # Shows the hostname
 [hostname]
-ssh_only = false
+ssh_only = true
 format = "[$hostname](bold #B054FF) "
 disabled = false
 
@@ -54,7 +54,7 @@ format = "at [$path]($style)[$read_only]($read_only_style) "
 # Shows current git branch
 [git_branch]
 symbol = " "
-format = "[$symbol$branch]($style) "
+format = "on [$symbol$branch]($style) "
 # truncation_length = 4
 truncation_symbol = "…/"
 style = "bold #905AFF"
