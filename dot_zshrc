@@ -37,6 +37,7 @@ fi
 source $ZSH/oh-my-zsh.sh <$TTY
 
 [[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
+[[ -f ~/.zsh/gpg.zsh ]] && source ~/.zsh/gpg.zsh
 eval "$(starship init zsh)"
 
 if command -v sagecipher &>/dev/null; then
