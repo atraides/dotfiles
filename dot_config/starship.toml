@@ -5,8 +5,8 @@ command_timeout = 1000  # Change command timeout from 500 to 1000 ms
 
 # Change the default prompt format
 format = """\
-[╭╴](238)$env_var\
-$all[╰─](238)$character"""
+[╭╴](#121212)$env_var\
+$all[╰─](#121212)$character"""
 
 # Drop ugly default prompt characters
 [character]
@@ -57,12 +57,12 @@ symbol = " "
 format = "[$symbol$branch]($style) "
 # truncation_length = 4
 truncation_symbol = "…/"
-style = "bold green"
+style = "bold #905AFF"
 
 # Shows current git status
 [git_status]
 format = '[\($all_status$ahead_behind\)]($style) '
-style = "bold green"
+style = "bold #905AFF"
 conflicted = "🏳"
 up_to_date = " "
 untracked = ""
@@ -77,7 +77,7 @@ deleted = " "
 
 # Shows kubernetes context and namespace
 [kubernetes]
-format = 'via [ﴱ $context\($namespace\)](bold purple) '
+format = 'via [ﴱ $context\($namespace\)](bold #5EA2FF) '
 disabled = false
 
 # ---
