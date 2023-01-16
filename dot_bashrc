@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=20000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -118,6 +118,12 @@ fi
 
 if [ -f ~/.ansible.sh ]; then
      . ~/.ansible.sh
+fi
+
+if [ -d ~/.pyenv ]; then
+     export PYENV_ROOT="${HOME}/.pyenv"
+     export PATH="${PYENV_ROOT}/bin:${PATH}"
+     eval "$(pyenv init -)"
 fi
 
 export PATH="${HOME}/.local/bin:${HOME}/bin:/usr/local/bin:${PATH}"
