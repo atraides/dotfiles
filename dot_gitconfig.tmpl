@@ -6,6 +6,8 @@
     path = .gitconfig-roche
 [includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
     path = .gitconfig-personal
+[includeIf "hasconfig:remote.*.url:*://*@git.sapstar.cc*/**"]
+    path = .gitconfig-personal
 
 [user]
 	name = {{ .name | quote }}
