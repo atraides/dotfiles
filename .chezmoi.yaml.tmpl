@@ -10,4 +10,8 @@ git:
   autoPush: true
 
 edit:
-  command: "nvim"
+  {{ if (or (eq .chezmoi.hostname "aiyura" ) (.chezmoi.hostname | contains "dev") (eq .chezmoi.hostname "aeon")) }}
+  command: "code --wait"
+  {{ else }}
+  command: "vi
+  {{ end }}
