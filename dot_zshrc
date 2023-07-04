@@ -34,6 +34,10 @@ if command -v code &>/dev/null; then
   plugins+=("vscode");
 fi
 
+if command -v kubectl &>/dev/null; then
+  plugins+=("kubectl");
+fi
+
 source $ZSH/oh-my-zsh.sh <$TTY
 
 [[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
