@@ -15,7 +15,7 @@ if command -v git &>/dev/null; then
   plugins+=("git");
 fi
 
-if [[ -x /usr/bin/grc && -f /etc/grc.zsh ]]; then
+if [[ (-x /usr/bin/grc || -x /usr/local/bin/grc) && -f /etc/grc.zsh ]]; then
   plugins+=("grc");
 fi
 
