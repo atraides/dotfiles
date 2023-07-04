@@ -1,7 +1,7 @@
 README.md
 */npm/lib/node_modules
 */npm/bin
-{{ if ne .chezmoi.os "darwin" }}
+{{ if (or (eq .chezmoi.hostname "DYF4THH7GL" ) (ne .chezmoi.os "darwin")) }}
 Library
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
