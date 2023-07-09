@@ -45,7 +45,9 @@ source $ZSH/oh-my-zsh.sh <$TTY
 if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
 elif [[ -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
-  ZSH_THEME="powerlevel10k/powerlevel10k"
+  export ZSH_THEME="powerlevel10k/powerlevel10k"
+  # resource oh-my-zsh to activate the theme
+  source $ZSH/oh-my-zsh.sh <$TTY
 fi
 
 if command -v sagecipher &>/dev/null; then
