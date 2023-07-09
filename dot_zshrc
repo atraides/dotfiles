@@ -44,7 +44,7 @@ source $ZSH/oh-my-zsh.sh <$TTY
 [[ -f ~/.zsh/gpg.zsh ]] && source ~/.zsh/gpg.zsh
 if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
-elif [[ -f ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
+elif [[ -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
   ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
 
