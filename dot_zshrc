@@ -40,14 +40,7 @@ fi
 
 source $ZSH/oh-my-zsh.sh <$TTY
 
-if [[ -f ~/.zsh/starship.zsh ]]; then
-  source ~/.zsh/starship.zsh
-else
-  if [[ -f ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
-    ZSH_THEME="powerlevel10k/powerlevel10k"
-  fi
-fi
-
+[[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
 [[ -f ~/.zsh/gpg.zsh ]] && source ~/.zsh/gpg.zsh
 if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
