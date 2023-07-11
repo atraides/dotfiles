@@ -16,7 +16,7 @@
     exact: false
     stripComponents: 1
 
-{{ if (or (eq .chezmoi.hostname "aiyura" ) (.chezmoi.hostname | contains "dev") (eq .chezmoi.hostname "aeon")) }}
+{{ if (or (eq .chezmoi.hostname "aiyura" ) (eq .chezmoi.hostname "DYF4THH7GL") (eq .chezmoi.hostname "aeon")) }}
 ".pyenv":
     type: "archive"
     url: "https://github.com/pyenv/pyenv/archive/refs/tags/{{ .pyenv_version }}.tar.gz"
