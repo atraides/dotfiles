@@ -1,3 +1,6 @@
+name: "Dániel Hagyárossy"
+email: "daniel@hagyarossy.hu"
+
 # renovate: datasource=github-tags depName=romkatv/powerlevel10k
 p10k_version: "v1.19.0"
 # renovate: datasource=github-tags depName=pyenv/pyenv
