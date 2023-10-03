@@ -1,7 +1,7 @@
 # renovate: datasource=github-tags depName=romkatv/powerlevel10k
 p10k_version: "v1.19.0"
 # renovate: datasource=github-tags depName=pyenv/pyenv
-pyenv_version: "v2.3.22"
+pyenv_version: "v2.3.28"
 # renovate: datasource=github-tags depName=nodejs/node
 nodejs_version: "v20.8.0"
 # renovate: datasource=github-tags depName=unxsh/nitch versioning=docker
