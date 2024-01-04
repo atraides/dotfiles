@@ -3,7 +3,7 @@ p10k_version: "v1.19.0"
 # renovate: datasource=github-tags depName=pyenv/pyenv
 pyenv_version: "v2.3.35"
 # renovate: datasource=github-tags depName=nodejs/node
-nodejs_version: "v21.3.0"
+nodejs_version: "v21.5.0"
 # renovate: datasource=github-tags depName=unxsh/nitch versioning=docker
 nitch_version: "0.1.6"
 # renovate: datasource=golang-version depName=go
