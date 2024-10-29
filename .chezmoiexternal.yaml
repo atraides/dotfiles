@@ -63,7 +63,7 @@
     refreshPeriod: "168h"
 "bin/nvim":
     type: "archive"
-    url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz"
+    url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-arm64.tar.gz"
     exact: true
     stripComponents: 1
     refreshPeriod: "168h"
