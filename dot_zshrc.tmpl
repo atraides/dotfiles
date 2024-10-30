@@ -64,3 +64,19 @@ if command -v sagecipher &>/dev/null; then
   export PYTHON_KEYRING_BACKEND=sagecipher.keyring.Keyring
   export KEYRING_PROPERTY_SSH_KEY_FINGERPRINT=$(sagecipher list-keys | awk '{print $2}')
 fi
+
+{{- if eq .chezmoi.host "DYF4THH7GL" }}
+  sroute() {
+    sudo route add 172.28.10.0/24 192.168.183.1
+    sudo route add 192.168.42.64/26 192.168.183.1
+    sudo route add 10.183.0.0/26 192.168.183.1
+    sudo route add 10.15.1.0/24 192.168.183.1
+  }
+
+  hroute() {
+    sudo route del 172.28.10.0/24
+    sudo route del 192.168.42.64/26
+    sudo route del 10.183.0.0/26
+    sudo route del 10.15.1.0/24
+  }
+{{- end }}
