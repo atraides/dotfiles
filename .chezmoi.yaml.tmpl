@@ -2,6 +2,7 @@
 {{ $globalDomain := promptString "What is domain of your GLOBAL domain" ".global" }}
 {{ $workDomain := promptString "What is domain of your WORK domain"  ".local" }}
 {{ $workUser := promptString "What is the name of your work username" "hagyarod" }}
+{{ $terminalHost := promptString "What is the name of the terminal server (shortname)" "terminal" }}
 
 data:
   email: "daniel@hagyarossy.hu"
@@ -10,6 +11,7 @@ data:
   globaldomain: {{ $globalDomain | quote }}
   workdomain: {{ $workDomain | quote }}
   workuser: {{ $workUser | quote }}
+  terminalhost: {{ cat $terminalHost $globalDomain | nospace | quote }}
 
 git:
   autoCommit: true

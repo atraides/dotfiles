@@ -4,5 +4,5 @@ Host *
 {{ end }}
 
 {{ if eq .chezmoi.hostname .worklaptop }}
-  {{- includeTemplate "hec_config.tmpl" }}
+  Include config.d/hec
 {{- end }}

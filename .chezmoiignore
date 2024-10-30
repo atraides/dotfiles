@@ -1,8 +1,11 @@
 README.md
 */npm/lib/node_modules
 */npm/bin
-{{ if (or (eq .chezmoi.hostname "DYF4THH7GL" ) (ne .chezmoi.os "darwin")) }}
+{{ if (or (eq .chezmoi.hostname .worklaptop) (ne .chezmoi.os "darwin")) }}
 Library
+{{ end }}
+{{ if (and (ne .chezmoi.hostname .worklaptop) (eq .chezmoi.os "darwin")) }}
+.ssh/config.d/hec
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
 .fonts/*/.uuid

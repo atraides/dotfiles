@@ -1,5 +1,5 @@
 #
-{{ if (or (eq .chezmoi.hostname "aiyura" ) (eq .chezmoi.hostname "DYF4THH7GL") (eq .chezmoi.hostname "aeon")) }}
+{{ if (or (eq .chezmoi.hostname "aiyura" ) (eq .chezmoi.hostname .worklaptop) (eq .chezmoi.hostname "aeon")) }}
 if (( ${+commands[gpgconf]} )); then
   GPG_SSH_SOCK=$(gpgconf --list-dirs | grep -i ssh | awk -F':' '{ print $2 }')
   export SSH_AUTH_SOCK=${GPG_SSH_SOCK}

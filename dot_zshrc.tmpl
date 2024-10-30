@@ -66,6 +66,17 @@ if command -v sagecipher &>/dev/null; then
 fi
 
 {{ if eq .chezmoi.hostname .worklaptop -}}
+alias start-tunnel="ssh -M -S ~/.ssh/LTS-socket.ctl -fNT {{ .terminalhost }}"
+
+nssh() {
+  local HOSTNAME=${1}
+  if [[ ${HOSTNAME:l} =~ "hec" ]]; then
+    ssh ${1}.$(dc-finder.sh ${1}).hec.sap.biz
+  else
+    ssh ${1}
+  fi
+}
+
 sroute() {
   sudo route add 172.28.10.64/26 192.168.183.1
   sudo route add 192.168.42.64/26 192.168.183.1

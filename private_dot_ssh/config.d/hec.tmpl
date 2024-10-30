@@ -1,5 +1,5 @@
-Host hec-lts.wdf.sap.corp
-  User i587166
+Host {{ .terminalhost }}
+  User {{ .workuser }}
   ForwardAgent no
   SendEnv LANG LC_*
 #  ControlMaster yes
@@ -10,25 +10,20 @@ Host hec-lts.wdf.sap.corp
 #  RequestTTY no
   ServerAliveInterval 300
   LocalForward 26534 localhost:22
-  LocalForward 58082 vhmihrotgwa.rot.hec.sap.biz:8080
-  LocalForward 58083 vhxstus1gwa.us1.hec.sap.biz:8080
-  LocalForward 58084 vhxs4yyzgwa.yyz.hec.sap.biz:8080
-  LocalForward 58085 vhheufra3gwa.fra3.hec.sap.biz:8080
-  LocalForward 58086 vhcvyus4gwa.us4.hec.sap.biz:8080
-  LocalForward 58087 vhawyfra3gwa.fra3.hec.sap.biz:8080
+  {{ output "proxy-list-generator.sh" | trim }}
   DynamicForward 26535
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
 
 Host localhost
-  User i587166
+  User {{ .workuser }}
   ForwardAgent yes
   SendEnv LANG LC_*
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
 
-Host *.hec.sap.biz
-  User i587166
+Host *{{ .workdomain }}
+  User {{ .workuser }}
   ForwardAgent no
   SendEnv LANG LC_*
   ProxyJump localhost:26534
