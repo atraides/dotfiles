@@ -66,6 +66,8 @@ if command -v sagecipher &>/dev/null; then
 fi
 
 {{ if eq .chezmoi.hostname .worklaptop -}}
+export PATH="${PATH}:${HOME}/bin/HECtools"
+
 alias start-tunnel="ssh -M -S ~/.ssh/LTS-socket.ctl -fNT {{ .terminalhost }}"
 
 nssh() {
