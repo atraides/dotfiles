@@ -1,3 +1,7 @@
+{{ $workLaptop := promptStringOnce . "worklaptop" "What is hostname of your work laptop"}}
+{{ $globalDomain := promptStringOnce . ".global" "What is domain of your GLOBAL domain" }}
+{{ $workDomain := promptStringOnce . ".local" "What is domain of your WORK domain" }}
+{{ $workUser := promptStringOnce . "hagyarod" "What is the name of your work username" }}
 # vim: syntax=bash
 #
 # gitignore.io
@@ -65,7 +69,7 @@ if command -v sagecipher &>/dev/null; then
   export KEYRING_PROPERTY_SSH_KEY_FINGERPRINT=$(sagecipher list-keys | awk '{print $2}')
 fi
 
-{{- if eq .chezmoi.hostname "DYF4THH7GL" }}
+{{- if eq .chezmoi.hostname $workLaptop }}
   sroute() {
     sudo route add 172.28.10.0/24 192.168.183.1
     sudo route add 192.168.42.64/26 192.168.183.1

@@ -1,9 +1,11 @@
+{{ $workLaptop := promptStringOnce . "worklaptop" "What is hostname of your work laptop"}}
+{{ $globalDomain := promptStringOnce . ".global" "What is domain of your GLOBAL domain" }}
 # ~/.gitconfig
 
-[includeIf "hasconfig:remote.*.url:git@ssh.code.roche.com:*/**"]
-    path = .gitconfig-roche
-[includeIf "hasconfig:remote.*.url:*://*@bitbk.roche.com*/**"]
-    path = .gitconfig-roche
+{{- if eq .chezmoi.hostname $worklaptop-name }}
+[includeIf "hasconfig:remote.*.url:git@github.{{ $globalDomain }}*/**"]
+    path = .gitconfig-sap
+{{- end }}
 [includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
     path = .gitconfig-personal
 [includeIf "hasconfig:remote.*.url:git@git.sapstar.cc*/**"]
@@ -11,7 +13,9 @@
 
 [user]
 	name = {{ .name | quote }}
+{{- if ne .chezmoi.hostname $worklaptop-name }}
 	signingkey = AE47445763C2B713
+{{- end }}
 
 [init]
   defaultBranch = main
@@ -19,5 +23,8 @@
 [push]
   followTags = true
 
+{{- if ne .chezmoi.hostname $worklaptop-name }}
 [commit]
 	gpgsign = true
+{{- end }}
+
