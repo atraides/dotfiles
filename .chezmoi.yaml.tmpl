@@ -1,6 +1,15 @@
+{{ $workLaptop := promptString "What is hostname of your work laptop" "worklaptop" }}
+{{ $globalDomain := promptString "What is domain of your GLOBAL domain" ".global" }}
+{{ $workDomain := promptString "What is domain of your WORK domain"  ".local" }}
+{{ $workUser := promptString "What is the name of your work username" "hagyarod" }}
+
 data:
   email: "daniel@hagyarossy.hu"
   name: "Dániel Hagyárossy"
+  worklaptop: {{ $workLaptop | quote }}
+  globaldomain: {{ $globalDomain | quote }}
+  workdomain: {{ $workDomain | quote }}
+  workuser: {{ $workUser | quote }}
 
 git:
   autoCommit: true

@@ -1,13 +1,8 @@
-{{ $workLaptop := promptStringOnce . "worklaptop" "What is hostname of your work laptop"}}
-{{ $globalDomain := promptStringOnce . ".global" "What is domain of your GLOBAL domain" }}
-{{ $workDomain := promptStringOnce . ".local" "What is domain of your WORK domain" }}
-{{ $workUser := promptStringOnce . "hagyarod" "What is the name of your work username" }}
-
 {{- if eq .chezmoi.os "darwin" }}
 Host *
   SendEnv LANG LC_*
 {{ end }}
 
-{{- if ne .chezmoi.hostname $workLaptop }}
-  {{ includeTemplate "hec_config.tmpl" }}
+{{ if eq .chezmoi.hostname .worklaptop }}
+  {{- includeTemplate "hec_config.tmpl" }}
 {{- end }}
