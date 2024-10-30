@@ -65,7 +65,7 @@ if command -v sagecipher &>/dev/null; then
   export KEYRING_PROPERTY_SSH_KEY_FINGERPRINT=$(sagecipher list-keys | awk '{print $2}')
 fi
 
-{{- if eq .chezmoi.host "DYF4THH7GL" }}
+{{- if eq .chezmoi.hostname "DYF4THH7GL" }}
   sroute() {
     sudo route add 172.28.10.0/24 192.168.183.1
     sudo route add 192.168.42.64/26 192.168.183.1
