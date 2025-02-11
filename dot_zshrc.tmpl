@@ -80,7 +80,7 @@ sapssh() {
 }
 
 sroute() {
-  sudo route add 172.28.10.64/26 192.168.183.1
+  sudo route add 192.168.1.0/24 192.168.183.1
   sudo route add 192.168.42.64/26 192.168.183.1
   sudo route add 10.183.0.0/26 192.168.183.1
   sudo route add 10.15.1.0/24 192.168.183.1
@@ -88,8 +88,7 @@ sroute() {
 }
 
 droute() {
-  sudo route delete 172.28.10.0/26
-  sudo route delete 172.28.10.64/26
+  sudo route delete 192.168.1.0/24
   sudo route delete 192.168.42.64/26
   sudo route delete 10.183.0.0/26
   sudo route delete 10.15.1.0/24
@@ -97,11 +96,10 @@ droute() {
 }
 
 hroute() {
-  sudo route add 172.28.10.0/26 172.28.10.65
-  sudo route add 172.28.10.64/26 172.28.10.65
-  sudo route add 192.168.42.64/26 172.28.10.65
-  sudo route add 10.183.0.0/26 172.28.10.65
-  sudo route add 10.15.1.0/24 172.28.10.65
-  sudo route add 10.15.100.0/24 172.28.10.65
+  sudo route add 192.168.1.0/24 192.168.1.1
+  sudo route add 192.168.42.64/26 192.168.1.1
+  sudo route add 10.183.0.0/26 192.168.1.1
+  sudo route add 10.15.1.0/24 192.168.1.1
+  sudo route add 10.15.100.0/24 192.168.1.1
 }
 {{- end -}}
