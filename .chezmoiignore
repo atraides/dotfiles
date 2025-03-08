@@ -4,7 +4,7 @@ README.md
 {{ if (or (eq .chezmoi.hostname .worklaptop) (ne .chezmoi.os "darwin")) }}
 Library
 {{ end }}
-{{ if (and (ne .chezmoi.hostname .worklaptop) (eq .chezmoi.os "darwin")) }}
+{{ if (or(and (ne .chezmoi.hostname .worklaptop) (eq .chezmoi.os "darwin")) (eq .chezmoi.os "linux")) }}
 .ssh/config.d/hec
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
