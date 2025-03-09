@@ -52,6 +52,10 @@
     url: "https://go.dev/dl/go{{ .go_version }}.linux-amd64.tar.gz"
     exact: false
     stripComponents: 1
+"bin/lazygit":
+    type: "archive"
+    url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ .lazygit_version }}/lazygit_{{ .lazygit_version }}_Linux_x86_64.tar.gz"
+    include: "lazygit"
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}

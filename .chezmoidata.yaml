@@ -8,3 +8,6 @@ nodejs_version: "v23.1.0"
 nitch_version: "0.1.6"
 # renovate: datasource=golang-version depName=go
 go_version: "1.23.2"
+# renovate: datasource=github-tags depName=jesseduffield/lazygit
+lazygit_version: "0.48.0"
+
