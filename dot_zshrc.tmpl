@@ -40,7 +40,7 @@ fi
 if command -v kubecm &>/dev/null; then
   alias kc="kubecm"
   alias ks="kubecm switch"
-  alias kn="kubecm namespaces"
+  alias kn="kubecm namespace"
 fi
 
 if command -v code &>/dev/null; then
@@ -49,12 +49,6 @@ fi
 
 if command -v kubectl &>/dev/null; then
   plugins+=("kubectl");
-  plugins+=("kubectx");
-  typeset -A kubectx_mapping
-  kubectx_mapping=(
-    hec44-czr-0001        "Commerzreal"
-    hec44-omw-0001        "OMW"
-  )
 fi
 
 source $ZSH/oh-my-zsh.sh <$TTY
