@@ -49,6 +49,11 @@ fi
 
 if command -v kubectl &>/dev/null; then
   plugins+=("kubectl");
+  plugins+=("kubectx");
+  typeset -A kubectx_mapping
+  kubectx_mapping=(
+    hec44-czr-0001        "Commerzreal"
+  )
 fi
 
 source $ZSH/oh-my-zsh.sh <$TTY
