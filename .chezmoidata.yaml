@@ -9,5 +9,5 @@ nitch_version: "0.1.6"
 # renovate: datasource=golang-version depName=go
 go_version: "1.25.0"
 # renovate: datasource=github-tags depName=jesseduffield/lazygit
-lazygit_version: "0.48.0"
+lazygit_version: "0.54.2"
 
