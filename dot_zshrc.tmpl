@@ -37,6 +37,12 @@ if command -v eza &>/dev/null; then
   plugins+=("eza");
 fi
 
+if command -v kubecm &>/dev/null; then
+  alias kc="kubecm"
+  alias ks="kubecm switch"
+  alias kn="kubecm namespaces"
+fi
+
 if command -v code &>/dev/null; then
   plugins+=("vscode");
 fi
