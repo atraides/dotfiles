@@ -54,7 +54,7 @@
     stripComponents: 1
 "bin/":
     type: "archive"
-    url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ .lazygit_version }}/lazygit_{{ .lazygit_version }}_Linux_x86_64.tar.gz"
+    url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ .lazygit_version }}/lazygit_{{ .lazygit_version }}_linux_x86_64.tar.gz"
     include: 
       - "lazygit"
 {{ end }}
@@ -72,6 +72,11 @@
     exact: true
     stripComponents: 1
     refreshPeriod: "168h"
+"bin/":
+    type: "archive"
+    url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ .lazygit_version }}/lazygit_{{ .lazygit_version }}_darwin_arm64.tar.gz"
+    include: 
+      - "lazygit"
 {{ end }}
 
 {{ end }}
