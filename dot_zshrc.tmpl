@@ -51,11 +51,10 @@ if command -v kubectl &>/dev/null; then
   plugins+=("kubectl");
 fi
 
-source $ZSH/oh-my-zsh.sh <$TTY
 
-[[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
-[[ -f ~/.zsh/gpg.zsh ]] && source ~/.zsh/gpg.zsh
 if command -v starship &>/dev/null; then
+  source $ZSH/oh-my-zsh.sh <$TTY
+  [[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
   eval "$(starship init zsh)"
 elif [[ -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
   export ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -71,7 +70,11 @@ elif [[ -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
   
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+else
+  source $ZSH/oh-my-zsh.sh <$TTY
 fi
+
+[[ -f ~/.zsh/gpg.zsh ]] && source ~/.zsh/gpg.zsh
 
 if command -v sagecipher &>/dev/null; then
   export PYTHON_KEYRING_BACKEND=sagecipher.keyring.Keyring
@@ -102,6 +105,7 @@ sapssh() {
 
 sroute() {
   sudo route add 192.168.1.0/24 192.168.183.1
+  sudo route add 192.168.35.0/24 192.168.183.1
   sudo route add 192.168.42.64/26 192.168.183.1
   sudo route add 192.168.44.0/24 192.168.183.1
   sudo route add 10.183.0.0/26 192.168.183.1
@@ -113,7 +117,9 @@ sroute() {
 
 droute() {
   sudo route delete 192.168.1.0/24
+  sudo route delete 192.168.35.0/24
   sudo route delete 192.168.42.64/26
+  sudo route delete 192.168.44.0/24
   sudo route delete 10.183.0.0/26
   sudo route delete 10.15.1.0/24
   sudo route delete 10.15.100.0/24
