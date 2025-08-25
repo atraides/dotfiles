@@ -94,12 +94,12 @@ export PATH="${PATH}:${HOME}/bin/HECtools"
 
 alias start-tunnel="ssh -M -S ~/.ssh/LTS-socket.ctl -fNT {{ .terminalhost }}"
 
-sapssh() {
+ssh() {
   local HOSTNAME=${1}
-  if [[ ${HOSTNAME:l} =~ "hec" ]]; then
-    ssh ${1}.$(dc-finder.sh ${1}).hec.sap.biz
+  if [[ ${HOSTNAME:l} =~ "{{- .workhost_prefix -}}" ]]; then
+    command ssh ${1}.$(dc-finder.sh ${1}){{ .workdomain }} ${@:1}
   else
-    ssh ${1}
+    command ssh ${@}
   fi
 }
 

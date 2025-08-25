@@ -2,6 +2,7 @@
 {{ $globalDomain := promptString "What is domain of your GLOBAL domain" ".global" }}
 {{ $workDomain := promptString "What is domain of your WORK domain"  ".local" }}
 {{ $workUser := promptString "What is the name of your work username" "hagyarod" }}
+{{ $workHostPrefix := promptString "What is the prefix/identifier of your work hostnames?" "ssn" }}
 {{ $terminalHost := promptString "What is the name of the terminal server (shortname)" "terminal" }}
 
 data:
@@ -11,6 +12,7 @@ data:
   globaldomain: {{ $globalDomain | quote }}
   workdomain: {{ $workDomain | quote }}
   workuser: {{ $workUser | quote }}
+  workhost_prefix: {{ $workHostPrefix | lower | quote }}
   terminalhost: {{ cat $terminalHost $globalDomain | nospace | quote }}
 
 git:
