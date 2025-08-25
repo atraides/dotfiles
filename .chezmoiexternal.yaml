@@ -16,6 +16,13 @@
     exact: false
     stripComponents: 1
 
+{{ if (not eq .workspecific_repo "none") }}
+".work_specific":
+    type: "git-repo"
+    url: {{ .workspecific_repo | quote }}
+    refreshPeriod: "24h"
+{{ end }}
+
 {{ if (or (eq .chezmoi.hostname "alisaie" ) (eq .chezmoi.hostname "alphinaud" ) (eq .chezmoi.hostname .worklaptop) (eq .chezmoi.hostname "aeon") (eq .chezmoi.hostname "yshtola")) }}
 ".pyenv":
     type: "archive"
