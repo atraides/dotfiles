@@ -1,0 +1,13 @@
+# vim: syntax=yaml
+
+".local/share/chezmoi_base":
+  type: "archive"
+  url: "https://github.com/atraides/dotfiles_base/archive/refs/heads/main.zip"
+  refreshPeriod: "24h"
+  stripComponents: 1
+  exclude: ["*/dot_zshrc"]
+#".local/share/chezmoi_dev":
+#  type: "archive"
+#  url: "https://github.com/atraides/dotfiles_dev/archive/refs/heads/main.zip"
+#  refreshPeriod: "24h"
+#  stripComponents: 1
