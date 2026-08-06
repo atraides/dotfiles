@@ -1,9 +1,6 @@
 # vim: syntax=yaml
 
 ".local/share/chezmoi_base":
-  type: "archive"
-  url: "https://github.com/atraides/dotfiles_base/archive/refs/heads/main.zip"
+  type: "git-repo"
+  url: "https://github.com/atraides/dotfiles_base.git"
   refreshPeriod: "24h"
-  stripComponents: 1
-  exclude: ["*/dot_zshrc"]
-
